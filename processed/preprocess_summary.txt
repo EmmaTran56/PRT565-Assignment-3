@@ -1,0 +1,15 @@
+Preprocessing summary
+=====================
+Raw rows                         : 30,000
+Duplicate extras dropped         : 35
+Rows after clean                 : 29,965
+EDUCATION 0/5/6 -> Others        : 345
+MARRIAGE 0 -> Others             : 54
+Train / test                     : 23,972 / 5,993
+Train default rate               : 22.13%
+Test default rate                : 22.13%
+Features (unscaled, one-hot)     : 29
+
+Use train.csv + test.csv for Decision Tree and Random Forest.
+Use train_scaled.csv + test_scaled.csv for ANN and Gaussian Naive Bayes.
+Do not fit scalers or encoders again on the test set.

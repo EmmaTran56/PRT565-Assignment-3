@@ -25,7 +25,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_PATH = BASE_DIR / "default+of+credit+card+clients" / "default of credit card clients.xls"
+DATA_PATH = BASE_DIR / "default of credit card clients.xlsx"
 EDA_DIR = BASE_DIR / "eda_outputs"
 PROCESSED_DIR = BASE_DIR / "processed"
 EDA_DIR.mkdir(exist_ok=True)
@@ -495,7 +495,7 @@ def bill_and_payment(df: pd.DataFrame) -> None:
 
     fig, axes = plt.subplots(2, 3, figsize=(16, 9))
     for ax, col in zip(axes.ravel(), PAYAMT_COLS):
-    sns.histplot(np.log1p(work[col]), bins=40, ax=ax, color="#54A24B")  # log1p: zeros stay 0
+        sns.histplot(np.log1p(work[col]), bins=40, ax=ax, color="#54A24B")  # log1p: zeros stay 0
         ax.set_title(col)
         ax.set_xlabel("log1p(PAY_AMT)")
     fig.suptitle("Previous payment amounts (log1p; spike at 0 = no payment)")
